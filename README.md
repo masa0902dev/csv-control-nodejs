@@ -1,5 +1,5 @@
 ## makeRnadCSV()
-You can make random csv files with below parameters.
+You can make random csv files with below parameters.  
 It helps you check whether a system works correctly.
 
 - dir_path: directory path for generating csv files.
