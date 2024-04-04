@@ -58,7 +58,7 @@ function rmAllLastLineOfCSV(dir_path) {
 
 
 
-    // 以下、関数内でのみ有効な関数定義
+    // ---内部で使用している関数たち
     function checkExpectedError() {
         if (!fs.existsSync(dir_path)) {
             throw new Error("No such directory:", dir_path);
