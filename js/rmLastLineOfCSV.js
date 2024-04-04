@@ -32,7 +32,7 @@ function rmLastLineOfCSV(file_path) {
 
 
 
-    // 以下、関数内でのみ有効な関数定義
+    // ---内部で使用している関数たち
     function checkExpectedError() {
         if (!fs.existsSync(file_path)) {
             throw new Error("No such file or directory:", file_path);

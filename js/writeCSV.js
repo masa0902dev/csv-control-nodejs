@@ -3,9 +3,8 @@ const path = require("path");
 
 
 
-const write_file_path = "./forwrite/test_write.csv";
-const record = readAllLineCSV("./randcsv/test_data1.csv", 1);
-console.log(record);
+const write_file_path = "../forwrite/test_write.csv";
+const record = readAllLineCSV("../randcsv/test_data1.csv", 1);
 const header = "name,email,address,phone_number";
 writeCSV(write_file_path, record, header);
 
@@ -27,15 +26,21 @@ function writeCSV(file_path, record, header = "") {
             csv_content += value + "\n";
         });
         fs.writeFileSync(file_path, csv_content);
+        console.log("SUCCESS: wrote in " + file_path);
     } catch (error) {
-        throw new Error("No such directory: " + error);
+        throw new Error("FAILED to write: " + error);
     }
 
-    // 以下、関数内でのみ有効な関数定義
+
+
+    // ---内部で使用している関数たち
     function checkExpectedError() {
         const dir_path = path.dirname(file_path);
         if (!fs.existsSync(dir_path)) {
             throw new Error("No sudh directory " + dir_path);
+        }
+        if (fs.existsSync(file_path)) {
+            throw new Error("File already exists: " + file_path + "\nIf you want to append some data on a existing csv file, please use appendInCSV().");
         }
         if (!Array.isArray(record)) {
             throw new Error("2nd argument (record) must be an array.");
@@ -48,6 +53,7 @@ function writeCSV(file_path, record, header = "") {
 
 
 
+// writeCSV()で書き込むrecordの例として以下を使用。
 
 // 指定CSVファイル(1つ)のヘッダを除く全行を読み込み、二次元配列として返す。
 // string, int -> array

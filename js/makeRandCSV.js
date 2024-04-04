@@ -69,7 +69,7 @@ function makeRandCSV(dir_path, length_per_line, number_of_csvs=1, skip_row=1, ma
 
 
 
-    // 内部でのみ使用している関数たち
+    // ---内部で使用している関数たち
     function checkExpectedError() {
         if (!fs.existsSync(dir_path)) {
             throw new Error("1st argument (dir_path) is not a directory or does not exist: " + dir_path);
