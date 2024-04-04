@@ -12,7 +12,7 @@ Be Careful: If the same name files already exist, these are overwritten.
 
 
 ## readAllLineCSV()
-You can read all lines of 1 csv file excluded a header.  
+You can read all lines of 1 csv file excluded a header.
 
 
 ## readLastNLineCSV()
