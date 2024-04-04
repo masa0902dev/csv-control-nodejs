@@ -8,16 +8,16 @@ It helps you check whether a system works correctly.
 - skip_row: the number of lines of header.
 - max_column: the max number of column.
 - max_value: the max value of each data.
-<br>
+
 
 ## readAllLineCSV()
 You can read all lines of 1 csv file excluded a header.
-<br>
+
 
 ## readLastNLineCSV()
 You can read last N lines of 1 csv file.
 If the csv file has a blank line in a last line, it is ignored.
-<br>
+
 
 ## rmAllLastLineOfCSV()
 You can remove a last line of csv files that exist in a specified directory path.
