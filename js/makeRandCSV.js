@@ -18,14 +18,13 @@ makeRandCSV(write_dir_path, length_per_line, number_of_csvs, skip_row, max_colum
 // string, int, int, int, int, int -> void
 function makeRandCSV(dir_path, length_per_line, number_of_csvs=1, skip_row=1, max_column=400, max_value=100) {
     dir_path = path.join(__dirname, dir_path);
-    console.log(`\n----makeRandCSV(): your inputs are below----\ndir_path: ${dir_path}\nlength_per_line: ${length_per_line}\nnumber_of_csvs: ${number_of_csvs}\nskip_row: ${skip_row}\n`);
+    console.log(`\n----makeRandCSV(): your inputs are below----\ndir_path: ${dir_path}\nlength_per_line: ${length_per_line}\nnumber_of_csvs: ${number_of_csvs}\nskip_row: ${skip_row}\nmax_column: ${max_column}\nmax_value: ${max_value}\n`);
     checkExpectedError();
 
-    let file_name, file_path;
     let success_count = 0;
     for (let i = 0; i < number_of_csvs; i++) {
-        file_name = "test_data" + (i+1) + ".csv";
-        file_path = path.join(dir_path, file_name);
+        let file_name = "test" + (i+1) + ".csv";
+        let file_path = path.join(dir_path, file_name);
         let data = [];
         let column_number = randInt(max_column);
         for (let j = 0; j < column_number; j++) {
@@ -101,5 +100,3 @@ function makeRandCSV(dir_path, length_per_line, number_of_csvs=1, skip_row=1, ma
         return rand;
     }
 }
-
-

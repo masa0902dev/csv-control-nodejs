@@ -1,4 +1,3 @@
-const { read } = require('fs');
 const path = require('path');
 const current_dir_path = __dirname;
 const module_path = path.join(current_dir_path, '_module.js');
@@ -57,11 +56,11 @@ const appendInCSV = exported.appendInCSV;
 
 
 
-// 注：このファイルは_module.jsと同階層なので、相対パスはこのファイルからの相対パスである。
+// 注：このファイルは_module.jsと同階層なので、指定する相対パスは、このファイルからの相対パスである。
 makeRandCSV("../randcsv/", 4, 10, 1, 100, 1000);
-readAllLineCSV("../randcsv/test_data1.csv", 1);
-readLastNLineCSV("../randcsv/test_data1.csv", 3);    
-rmAllLastLineOfCSV("../randcsv/");
-rmLastLineOfCSV("../randcsv/test_data1.csv");
-writeCSV("../randcsv/test_data1.csv", [[1,2,3,4], [5,6,7,8]], "a,b,c,d");
-appendInCSV("../randcsv/test_data1.csv", [[9,9,9,9], [10,10,10,10], [11,11,11,11]]);
+// readAllLineCSV("../randcsv/test_data1.csv", 1);
+// readLastNLineCSV("../randcsv/test_data1.csv", 3);    
+// rmAllLastLineOfCSV("../randcsv/");
+// rmLastLineOfCSV("../randcsv/test_data1.csv");
+// writeCSV("../randcsv/test_data1.csv", [[1,2,3,4], [5,6,7,8]], "a,b,c,d");
+// appendInCSV("../randcsv/test_data1.csv", [[9,9,9,9], [10,10,10,10], [11,11,11,11]]);
