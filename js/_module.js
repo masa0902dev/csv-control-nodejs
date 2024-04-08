@@ -6,10 +6,10 @@ const path = require('path');
 
 // 相対ファイルパスを指定して、二次元配列(一次も可能)をCSVファイルに追記する。
 // string, array -> void
-function appendInCSV(file_path, record) {
+function appendCSV(file_path, record) {
     const raw_file_path = file_path; //checkExpectedError()でrecordの長さチェックに使用
     file_path = path.join(__dirname, file_path);
-    console.log(`\n----appendInCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: `);
+    console.log(`\n----appendCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: `);
     console.log(record);
     const file_exists = fs.existsSync(file_path);
     checkExpectedError();
@@ -384,7 +384,7 @@ function writeCSV(file_path, record, header = "") {
             throw new Error("No sudh directory " + dir_path);
         }
         if (fs.existsSync(file_path)) {
-            throw new Error("File already exists: " + file_path + "\nIf you want to append some data on a existing csv file, please use appendInCSV().");
+            throw new Error("File already exists: " + file_path + "\nIf you want to append some data on a existing csv file, please use appendCSV().");
         }
         if (!Array.isArray(record)) {
             throw new Error("2nd argument (record) must be an array.");
@@ -400,7 +400,7 @@ function writeCSV(file_path, record, header = "") {
 
 
 module.exports = {
-    appendInCSV: appendInCSV,
+    appendCSV: appendCSV,
     makeRandCSV: makeRandCSV,
     readAllLineCSV: readAllLineCSV,
     readLastNLineCSV: readLastNLineCSV,

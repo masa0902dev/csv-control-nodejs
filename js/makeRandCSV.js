@@ -5,13 +5,11 @@ const path = require('path');
 
 const write_dir_path = '../randcsv/';
 const length_per_line = 4;
-const number_of_csvs = 10;
+const number_of_csvs = 100;
 const skip_row = 1;
-const max_column = 100;
+const max_column = 1000;
 const max_value = 100;
 makeRandCSV(write_dir_path, length_per_line, number_of_csvs, skip_row, max_column, max_value);
-
-
 
 // 注意）同名のファイルがある場合は上書きされる。
 // CSVを作成するディレクトリの相対パス、1行あたりの要素数、作成するファイル数、ヘッダー行数、最大行数、データ最大値.
@@ -54,14 +52,14 @@ function makeRandCSV(dir_path, length_per_line, number_of_csvs=1, skip_row=1, ma
             });
             success_count++;
             // console.log("[" + (i+1) + "/" + number_of_csvs + "] SUCCEEDED in making CSV file: " + file_path);
-            console.log("[" + success_count + "/" + number_of_csvs + "]");
+            // console.log("[" + success_count + "/" + number_of_csvs + "]");
         } catch (error) {
             console.error("[" + (i+1) + "/" + number_of_csvs + "] FAILED to make CSV file.\n" + error);
         }
     }
 
     if (success_count == number_of_csvs) {
-        console.log("\nALL SUCCEEDED in making CSV files. [" + success_count + "/" + number_of_csvs + "]\n");
+        console.log("ALL SUCCEEDED in making CSV files. [" + success_count + "/" + number_of_csvs + "]\n");
     } else {
         console.log("\nSOME FAILED to make CSV files. [" + success_count + "/" + number_of_csvs + "]\n");
     }

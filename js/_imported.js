@@ -50,7 +50,7 @@ const writeCSV = exported.writeCSV;
 // 相対ファイルパスを指定して、二次元配列(一次も可能)をCSVファイルに追記する。
 // string, array -> void
 // function appendInCSV(file_path, record)
-const appendInCSV = exported.appendInCSV;
+const appendCSV = exported.appendCSV;
 
 
 
@@ -63,4 +63,4 @@ makeRandCSV("../randcsv/", 4, 10, 1, 100, 1000);
 // rmAllLastLineOfCSV("../randcsv/");
 // rmLastLineOfCSV("../randcsv/test_data1.csv");
 // writeCSV("../randcsv/test_data1.csv", [[1,2,3,4], [5,6,7,8]], "a,b,c,d");
-// appendInCSV("../randcsv/test_data1.csv", [[9,9,9,9], [10,10,10,10], [11,11,11,11]]);
+// appendCSV("../randcsv/test_data1.csv", [[9,9,9,9], [10,10,10,10], [11,11,11,11]]);

@@ -12,9 +12,9 @@ writeCSV(write_file_path, record, header);
 
 // 相対ファイルパスを指定して、二次元配列(一次も可能)をCSVファイルに書き込む。ヘッダは1行目のみ(指定なしならヘッダ行なし)。
 // string, array, string -> void
-function writeCSV(file_path, record, header = "") {
+function writeCSV(file_path, record, header="") {
     file_path = path.join(__dirname, file_path);
-    console.log(`\n----readAllLineCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: ${record}\nheader: ${header}\n`);
+    console.log(`\n----writeCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: ${record}\nheader: ${header}\n`);
     checkExpectedError();
 
     try {

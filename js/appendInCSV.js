@@ -15,16 +15,16 @@ const record = [
 //     [1,2],
 //     [3,4],
 // ]
-appendInCSV(append_file_path, record);
+appendCSV(append_file_path, record);
 
 
 
 // 相対ファイルパスを指定して、二次元配列(一次も可能)をCSVファイルに追記する。
 // string, array -> void
-function appendInCSV(file_path, record) {
+function appendCSV(file_path, record) {
     const raw_file_path = file_path; //checkExpectedError()でrecordの長さチェックに使用
     file_path = path.join(__dirname, file_path);
-    console.log(`\n----appendInCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: `);
+    console.log(`\n----appendCSV(): your inputs are below----\nfile_path: ${file_path}\nrecord: `);
     console.log(record);
     const file_exists = fs.existsSync(file_path);
     checkExpectedError();
@@ -62,7 +62,7 @@ function appendInCSV(file_path, record) {
                 const correct_line_length = existing_line.length;
                 record.forEach(arr => {
                     if (arr.length != correct_line_length) {
-                        throw new Error("The length of each array in 2nd argument (record) is dirrerent from the length of the last line in the CSV file.\n" + "Correct length: " + correct_line_length + "\nYour length: " + arr.length);
+                        throw new Error("The length of each array in 2nd argument (record) is dirrerent from the length of the lines in the CSV file.\n" + "Correct length: " + correct_line_length + "\nYour Input length: " + arr.length);
                     }
                 });
             }

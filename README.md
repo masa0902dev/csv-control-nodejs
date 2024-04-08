@@ -35,7 +35,7 @@ You can write some data on a specified new csv file.
 - If the csv file does not exist, a new file is generated and write data in. If the csv file exists, this function throws an error.
 
 
-## appendInCSV()
+## appendCSV()
 You can append some data on a specified csv file.  
 - If the csv file does not exist, a new file is generated and write data in. If the csv file exists, appends the data.  
 - If the length of data you want to append is different from the length of a line in existing csv file, this function throws an error.
